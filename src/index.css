@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.homepage {
+	display: flex;
+}
+
+.homepage a {
+	display: flex;
+}
+
+.correct {
+	border: 1px solid green;
+	background-color: green;
+}
+
+.incorrect {
+	border: 1px solid red;
+	background-color: red;
+}
+
+button:disabled {
+	opacity: 1;
+	/* background-color: transparent; */
+	color: unset;
+}
