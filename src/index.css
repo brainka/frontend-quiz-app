@@ -1,3 +1,24 @@
+:root {
+	--electric-violet: #a729f5;
+	--oxford-blue: #313e51;
+	--fiord: #3b4d66;
+	--grey-navy: #626c7f;
+	--shuttle-gray: #abc1e1;
+	--catskill-white: #f4f6fa;
+	--white: #ffffff;
+	--shamrock-green: #26d782;
+	--burnt-sienna: #ee5454;
+}
+
+@font-face {
+	font-family: 'RubikVariableFont';
+	src: url(./assets/fonts/Rubik-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: 'RubikItalicFont';
+	src: url(./assets/fonts/Rubik-Italic-VariableFont_wght.ttf);
+}
+
 *,
 *::before,
 *::after {
@@ -11,6 +32,24 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: 'RubikVariableFont', sans-serif;
+	color: var(--oxford-blue);
+	background-color: var(--catskill-white);
+	background-image: url('./assets/images/pattern-background-desktop-light.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: 500;
+	gap: 32px;
+	align-items: center;
+	font-size: 28px;
+	padding: 20px;
+	border-radius: 24px;
+	background-color: var(--white);
 }
 
 img,
@@ -27,6 +66,16 @@ select {
 	font-size: inherit;
 }
 
+h1 {
+	font-weight: 200;
+	font-size: 64px;
+	line-height: 110%;
+}
+
+h1 span {
+	font-weight: 500;
+}
+
 .homepage {
 	display: flex;
 }
@@ -35,18 +84,155 @@ select {
 	display: flex;
 }
 
+.homepage-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
+.homepage-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.homepage-left p span {
+	font-family: 'RubikItalicFont';
+	font-size: 20px;
+}
+
+.homepage-left p {
+	color: var(--grey-navy);
+}
+
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 8px;
+
+	border: 1px solid black;
+}
+
 .correct {
-	border: 1px solid green;
-	background-color: green;
+	outline: 3px solid var(--shamrock-green);
+	background-image: url('./assets/images/icon-correct.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
 }
 
 .incorrect {
-	border: 1px solid red;
-	background-color: red;
+	outline: 3px solid var(--burnt-sienna);
+	background-image: url('./assets/images/icon-error.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.quiz-page-container {
+	display: flex;
+	/* flex-direction: column; */
+	gap: 131px;
+	width: 100%;
+	max-width: 1160px;
+	cursor: pointer;
+}
+
+.quiz-button-container {
+	display: flex;
+	background-color: var(--white);
+	border-radius: 24px;
+	padding: 18px 20px 18px 20px;
+	gap: 32px;
+	/* height: 92px; */
+	/* width: 100%; */
+	/* max-width: 564px; */
+}
+
+.quiz-page-container-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 164px;
+}
+
+.quiz-page-container-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.question-order {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 56px;
+	height: 56px;
+	background-color: var(--catskill-white);
+	border-radius: 8px;
+	font-weight: 500;
+	font-size: 28px;
+	color: var(--grey-navy);
+}
+
+.question-order:hover {
+	background-color: #f6e7ff;
+}
+
+.question-counter {
+	font-size: 20px;
+	font-family: 'RubikItalicFont';
+	color: var(--grey-navy);
+}
+
+.quiz-question {
+	font-size: 36px;
+}
+
+.quiz-info-container {
+	display: flex;
+	flex-direction: column;
+	gap: 27px;
+}
+
+button {
+	/* width: 100%; */
+	color: var(--fiord);
+	font-weight: 500;
+	border: none;
+	background-color: var(--white);
+	font-size: 28px;
+	cursor: pointer;
 }
 
 button:disabled {
 	opacity: 1;
-	/* background-color: transparent; */
 	color: unset;
+}
+
+.button-submit {
+	padding: 32px 0;
+	border-radius: 24px;
+	background-color: var(--electric-violet);
+	color: var(--white);
+	height: 92px;
+}
+
+.button-submit:hover {
+	background-color: var(--electric-violet);
+	opacity: 50%;
+}
+
+.active-selected {
+	outline: 3px solid var(--electric-violet);
+}
+
+.not-selected-correct-answer {
+	background-image: url('./assets/images/icon-correct.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
 }
