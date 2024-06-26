@@ -61,7 +61,13 @@ const QuizPage = () => {
 	function incrementCurrentIndex() {
 		if (currentIndex + 1 === sliderMax) {
 			//navigate to another page
-			navigate('/results', { state: { score: score, topic: topic } });
+			navigate('/results', {
+				state: {
+					score: score,
+					topic: topic,
+					numberOfQuestions: quizQuestions.length,
+				},
+			});
 			return;
 		}
 
@@ -161,7 +167,6 @@ const QuizPage = () => {
 						<div className="question-counter">{`Question ${
 							currentIndex + 1
 						} of ${quizQuestions.length}`}</div>
-						{/* {score} */}
 						<div className="quiz-question">
 							{quizQuestions[currentIndex]?.question}
 						</div>
